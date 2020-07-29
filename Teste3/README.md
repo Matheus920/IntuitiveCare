@@ -6,7 +6,7 @@ Para o teste de banco de dados foi escolhido realizar as queries no MySQL. Nesse
 
 ## Quais as 10 operadoras que mais tiveram despesas com "EVENTOS/ SINISTROS CONHECIDOS OU AVISADOS  DE ASSISTÊNCIA A SAÚDE MEDICO HOSPITALAR" no último trimestre?
 
-![Resposta da Pergunta 1](https://imgur.com/86sFH6c.png)
+![Resposta da Pergunta 1](https://imgur.com/OEkDcZj.png)
 
 ## Quais as 10 operadoras que mais tiveram despesas com "EVENTOS/ SINISTROS CONHECIDOS OU AVISADOS  DE ASSISTÊNCIA A SAÚDE MEDICO HOSPITALAR" no último ano?
 

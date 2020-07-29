@@ -119,13 +119,14 @@ VL_SALDO_FINAL = replace(@VL_SALDO_FINAL, ',', '.');
 SELECT demonstracoes.REG_ANS, 
 registros.Razao_social,
 demonstracoes.DESCRICAO,
-demonstracoes.VL_SALDO_FINAL
+SUM(demonstracoes.VL_SALDO_FINAL) AS VALOR_SOMADO_TRIMESTRE
 FROM demonstracoes
 INNER JOIN  registros
 ON demonstracoes.REG_ANS = registros.Registro_ANS
 WHERE DESCRICAO = "EVENTOS/ SINISTROS CONHECIDOS OU AVISADOS  DE ASSISTÊNCIA A SAÚDE MEDICO HOSPITALAR "
 AND `DATA` = "2020-01-01" 
-ORDER BY VL_SALDO_FINAL DESC
+GROUP BY demonstracoes.REG_ANS
+ORDER BY VALOR_SOMADO_TRIMESTRE DESC
 LIMIT 10;
 
 # A query a seguir responde à segunda pergunta, dessa vez relativa ao último ano como um todo.
