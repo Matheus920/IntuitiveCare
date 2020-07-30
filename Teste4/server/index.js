@@ -7,9 +7,9 @@ app.get('/:searchText', async (req, res) => {
 
     const searchText = req.params.searchText;
 
-    if (!searchText || searchText.length > 255) {
+    if (!searchText || searchText.length > 255 || searchText.length < 3) {
         res.status(400).send({
-            mensagem: "Envie um texto com no máximo 255 caracteres para a busca."
+            mensagem: "Envie um texto com no máximo 255 e no mínimo 3 caracteres para a busca."
         });
     }
 
