@@ -1,24 +1,9 @@
-# app
+# Instruções para rodar o FrontEnd
 
-## Project setup
-```
-npm install
-```
+Com o Node.js instalado basta rodar os seguintes comandos dentro da pasta raíz:
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+``` npm i ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+E para rodar o programa de fato:
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+``` npm run serve ```
