@@ -1,8 +1,10 @@
+// Controller responsável pelas ações de fato.
 const reader = require('../data/reader');
 const Fuse = require('fuse.js');
 
 let controller = {}
 
+// Para a busca é utiilizado o fuse.js de modo a possibilitar fuzzysearch dentro da aplicação.
 controller.search = function(searchText) {
 
     let occurrences = [];

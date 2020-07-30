@@ -46,6 +46,7 @@
 </template>
 
 <script>
+// Componente responsável por lidar com as ações do usuário quando digita algo no TextField.
 import Axios from "axios";
 import _ from "lodash";
 

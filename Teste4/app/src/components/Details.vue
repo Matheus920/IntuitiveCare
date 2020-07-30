@@ -26,6 +26,7 @@
 </template>
 
 <script>
+// Componente responsável por exibir os detalhes de uma companhia quando se clica nela.
 export default {
   props: {
     company: {

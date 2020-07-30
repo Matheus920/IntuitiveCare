@@ -28,6 +28,7 @@
 </template>
 
 <script>
+// Componente responsável por exibir os resultados na tela.
 import Axios from "axios";
 import Details from './Details';
 
