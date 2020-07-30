@@ -13,8 +13,12 @@ const fs = require('fs');
     await page.goto('http://www.ans.gov.br/prestadores/tiss-troca-de-informacao-de-saude-suplementar');
     // Clicando no link mais recente
     console.log("Clicando no link mais recente...");
-    await page.click('a.alert-link');
-    await page.waitFor(5000);
+    await Promise.all([
+        page.click('a.alert-link'),
+        page.waitForNavigation({
+            waitUntil: 'networkidle0'
+        })
+    ]);
     // Recuperando o link para o PDF do componente organizacional
     console.log("Recuperando o link de download...");
     const urlToDownload = await page.$eval('a.btn.center-block', element => element.href);
