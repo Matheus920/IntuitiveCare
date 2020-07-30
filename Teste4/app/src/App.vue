@@ -7,54 +7,59 @@
     >
       <div class="d-flex align-center">
         <v-img
-          alt="Vuetify Logo"
+          alt="IntuitiveCare Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          :src="require('./assets/intuitivecare.png')"
           transition="scale-transition"
           width="40"
         />
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <v-toolbar-title>IntuitiveCare</v-toolbar-title>
       </div>
 
       <v-spacer></v-spacer>
 
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
+        href="https://github.com/Matheus920/IntuitiveCare"
         target="_blank"
         text
       >
-        <span class="mr-2">Latest Release</span>
+        <span class="mr-2">Outros Testes</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <Banner @searched="updateResults" @loading="updateLoading"/>
+      <List ref="listChildren"/>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Banner from './components/Banner';
+import List from './components/List';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    Banner,
+    List
   },
 
   data: () => ({
     //
   }),
+
+  methods: {
+    updateResults($event) {
+      this.$refs.listChildren.updateItems($event);
+    },
+    updateLoading($event){
+      this.$refs.listChildren.updateLoading($event);
+    }
+  }
 };
 </script>

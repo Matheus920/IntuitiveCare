@@ -32,4 +32,20 @@ controller.search = function(searchText) {
     });
 }
 
+controller.find = function(registry) {
+    let result = null;
+
+    return new Promise((resolve, reject) => {
+        reader.readCSV(row => {
+            if(row.message){
+                resolve(result);
+            } else {
+                if(row.registro == registry){
+                    result = row;
+                }
+            }
+        });
+    });
+}
+
 module.exports = controller;
